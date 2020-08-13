@@ -31,7 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackPool": [
       [
         "debug",
-        "virtual:0d918dcccd40d903724caabc4f540e23f0c3bfed41ff01c3d67ece4c2521b9eb81b63dabec77fe9791b0181f5107b5e704ac70c054fcbcd20418025fc8e45b3b#npm:4.1.0"
+        "virtual:0d918dcccd40d903724caabc4f540e23f0c3bfed41ff01c3d67ece4c2521b9eb81b63dabec77fe9791b0181f5107b5e704ac70c054fcbcd20418025fc8e45b3b#npm:4.2.0"
       ]
     ],
     "locationBlacklistData": [
@@ -41,7 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["debug", "virtual:0d918dcccd40d903724caabc4f540e23f0c3bfed41ff01c3d67ece4c2521b9eb81b63dabec77fe9791b0181f5107b5e704ac70c054fcbcd20418025fc8e45b3b#npm:4.1.0"]
+            ["debug", "virtual:0d918dcccd40d903724caabc4f540e23f0c3bfed41ff01c3d67ece4c2521b9eb81b63dabec77fe9791b0181f5107b5e704ac70c054fcbcd20418025fc8e45b3b#npm:4.2.0"]
           ],
           "linkType": "SOFT",
         }]
@@ -51,16 +51,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["berry-dependabot-test", "workspace:."],
-            ["debug", "virtual:0d918dcccd40d903724caabc4f540e23f0c3bfed41ff01c3d67ece4c2521b9eb81b63dabec77fe9791b0181f5107b5e704ac70c054fcbcd20418025fc8e45b3b#npm:4.1.0"]
+            ["debug", "virtual:0d918dcccd40d903724caabc4f540e23f0c3bfed41ff01c3d67ece4c2521b9eb81b63dabec77fe9791b0181f5107b5e704ac70c054fcbcd20418025fc8e45b3b#npm:4.2.0"]
           ],
           "linkType": "SOFT",
         }]
       ]],
       ["debug", [
-        ["virtual:0d918dcccd40d903724caabc4f540e23f0c3bfed41ff01c3d67ece4c2521b9eb81b63dabec77fe9791b0181f5107b5e704ac70c054fcbcd20418025fc8e45b3b#npm:4.1.0", {
-          "packageLocation": "./.yarn/$$virtual/debug-virtual-8f6e890479/0/cache/debug-npm-4.1.0-87184f7b48-8e58f1b5c9.zip/node_modules/debug/",
+        ["virtual:0d918dcccd40d903724caabc4f540e23f0c3bfed41ff01c3d67ece4c2521b9eb81b63dabec77fe9791b0181f5107b5e704ac70c054fcbcd20418025fc8e45b3b#npm:4.2.0", {
+          "packageLocation": "./.yarn/$$virtual/debug-virtual-e4070163d2/0/cache/debug-npm-4.2.0-9392baba7e-dcfb8ede26.zip/node_modules/debug/",
           "packageDependencies": [
-            ["debug", "virtual:0d918dcccd40d903724caabc4f540e23f0c3bfed41ff01c3d67ece4c2521b9eb81b63dabec77fe9791b0181f5107b5e704ac70c054fcbcd20418025fc8e45b3b#npm:4.1.0"],
+            ["debug", "virtual:0d918dcccd40d903724caabc4f540e23f0c3bfed41ff01c3d67ece4c2521b9eb81b63dabec77fe9791b0181f5107b5e704ac70c054fcbcd20418025fc8e45b3b#npm:4.2.0"],
             ["ms", "npm:2.1.2"],
             ["supports-color", null]
           ],
