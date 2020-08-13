@@ -18,6 +18,9 @@ jobs:
         node-version: '12'
     - name: Autofix lockfile
       run: |
+        # change directory
+        cd .`git log -1 --pretty=%s | awk '{ print $8 }'`
+
         # restore yarn.lock from the previous commit
         git checkout HEAD^ -- yarn.lock
 
@@ -25,7 +28,7 @@ jobs:
         yarn plugin import https://raw.githubusercontent.com/eps1lon/yarn-plugin-deduplicate/latest/bin/%40yarnpkg/plugin-deduplicate.js
 
         # if package.json was not updated, upgrade the dependency
-        git diff --name-only HEAD^ HEAD | grep -q 'package.json' || yarn up `git log -1 --pretty=%s | awk '{ print $3 }'`
+        git diff --name-only HEAD^ HEAD | grep -q 'package.json' || yarn up `git log -1 --pretty=%s | awk '{ print $2 }'`
 
         # restore package.json from the last commit
         git checkout HEAD -- package.json
@@ -36,6 +39,7 @@ jobs:
         yarn deduplicate
     - name: Commit changes
       run: |
+        cd .`git log -1 --pretty=%s | awk '{ print $8 }'`
         git add yarn.lock .yarn/cache .pnp.*
         git config --global user.name 'dependabot[bot]'
         git config --global user.email '49699333+dependabot[bot]@users.noreply.github.com'
