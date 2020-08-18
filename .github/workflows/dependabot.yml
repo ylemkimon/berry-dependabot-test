@@ -39,14 +39,16 @@ jobs:
 
         # deduplicate lockfile
         yarn deduplicate
-    - name: Commit changes
+    - name: Config Git
       run: |
+        # use personal access token to allow triggering new workflow
         BASIC_AUTH=$(echo -n "x-access-token:${{ secrets.GH_TOKEN }}" | base64)
         echo "::add-mask::$BASIC_AUTH"
         git config --global user.name '${{ github.event.commits[0].author.name }}'
         git config --global user.email '${{ github.event.commits[0].author.email }}'
         git config --local http.$GITHUB_SERVER_URL/.extraheader "AUTHORIZATION: basic $BASIC_AUTH"
-
+    - name: Commit changes
+      run: |
         cd .`git log -1 --pretty=%s | awk '{ print $8 }'`
         git add yarn.lock .yarn/cache .pnp.*
         git commit -m "Dependabot autofix [skip netlify]"
