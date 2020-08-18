@@ -7,9 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
 
     steps:
-    - uses: hmarr/debug-action@v1.0.0
     - uses: actions/checkout@v2
       with:
         fetch-depth: 2
@@ -43,8 +43,8 @@ jobs:
       run: |
         BASIC_AUTH=$(echo -n "x-access-token:${{ secrets.GH_TOKEN }}" | base64)
         echo "::add-mask::$BASIC_AUTH"
-        git config --global user.name 'dependabot[bot]'
-        git config --global user.email '49699333+dependabot[bot]@users.noreply.github.com'
+        git config --global user.name '${{ github.event.commits[0].author.name }}'
+        git config --global user.email '${{ github.event.commits[0].author.email }}'
         git config --local http.$GITHUB_SERVER_URL/.extraheader "AUTHORIZATION: basic $BASIC_AUTH"
 
         cd .`git log -1 --pretty=%s | awk '{ print $8 }'`
